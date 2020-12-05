@@ -1,0 +1,830 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>uniapp 从入门到实战 - Fallen-down</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="Fallen-down"><meta name="msapplication-TileImage" content="/img/favicon.svg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Fallen-down"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta description="uniappuniapp 基础运行项目第一次在微信开发者工具中运行需要先配置小程序的相关路径、小程序开发者工具中安全中服务端口开启 项目目录及文件pages         所有的页面存放目录static        静态资源目录，例如图片等unpackage     就是打包目录，在这里有各个平台的打包文件components    组件存放目录App.vue       是我们的根组件，所有"><meta property="og:type" content="blog"><meta property="og:title" content="uniapp 从入门到实战"><meta property="og:url" content="http://example.com/2020/06/29/Blog-about-learning-115/"><meta property="og:site_name" content="Fallen-down"><meta property="og:description" content="uniappuniapp 基础运行项目第一次在微信开发者工具中运行需要先配置小程序的相关路径、小程序开发者工具中安全中服务端口开启 项目目录及文件pages         所有的页面存放目录static        静态资源目录，例如图片等unpackage     就是打包目录，在这里有各个平台的打包文件components    组件存放目录App.vue       是我们的根组件，所有"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="http://example.com/img/og_image.png"><meta property="article:published_time" content="2020-06-29T01:34:27.000Z"><meta property="article:modified_time" content="2020-10-13T07:00:28.029Z"><meta property="article:author" content="Fallen-down"><meta property="article:tag" content="article"><meta property="article:tag" content="uniapp"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="/img/og_image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2020/06/29/Blog-about-learning-115/"},"headline":"Fallen-down","image":["http://example.com/img/og_image.png"],"datePublished":"2020-06-29T01:34:27.000Z","dateModified":"2020-10-13T07:00:28.029Z","author":{"@type":"Person","name":"Fallen-down"},"description":"uniappuniapp 基础运行项目第一次在微信开发者工具中运行需要先配置小程序的相关路径、小程序开发者工具中安全中服务端口开启 项目目录及文件pages         所有的页面存放目录static        静态资源目录，例如图片等unpackage     就是打包目录，在这里有各个平台的打包文件components    组件存放目录App.vue       是我们的根组件，所有"}</script><link rel="canonical" href="http://example.com/2020/06/29/Blog-about-learning-115/"><link rel="icon" href="/img/favicon.svg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css"><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script><!--!--><!--!--><meta name="generator" content="Hexo 5.2.0"></head><body class="is-3-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.svg" alt="Fallen-down" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">首页</a><a class="navbar-item" href="/archives">归档</a><a class="navbar-item" href="/categories">目录</a><a class="navbar-item" href="/tags">标签</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-6-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2020-06-29T01:34:27.000Z" title="2020-06-29T01:34:27.000Z">2020-06-29</time>发表</span><span class="level-item"><time dateTime="2020-10-13T07:00:28.029Z" title="2020-10-13T07:00:28.029Z">2020-10-13</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/learning/">learning</a><span> / </span><a class="link-muted" href="/categories/learning/%E7%A7%BB%E5%8A%A8%E7%AB%AF/">移动端</a></span><span class="level-item">37 分钟读完 (大约5482个字)</span></div></div><h1 class="title is-3 is-size-4-mobile">uniapp 从入门到实战</h1><div class="content"><h2 id="uniapp"><a href="#uniapp" class="headerlink" title="uniapp"></a>uniapp</h2><h2 id="uniapp-基础"><a href="#uniapp-基础" class="headerlink" title="uniapp 基础"></a>uniapp 基础</h2><h3 id="运行项目"><a href="#运行项目" class="headerlink" title="运行项目"></a>运行项目</h3><p><font color=#ffc107>第一次在微信开发者工具中运行需要先配置小程序的相关路径、小程序开发者工具中安全中服务端口开启</font></p>
+<h3 id="项目目录及文件"><a href="#项目目录及文件" class="headerlink" title="项目目录及文件"></a>项目目录及文件</h3><p>pages         所有的页面存放目录<br>static        静态资源目录，例如图片等<br>unpackage     就是打包目录，在这里有各个平台的打包文件<br>components    组件存放目录<br>App.vue       是我们的根组件，所有页面都是在 App.vue 下进行切换的，是页面入口文件，可以调用应用的生命周期函数。<br>manifest.json 文件是应用的配置文件，用于指定应用的名称、图标、权限等。<br>pages.json    文件用来对 uni-app 进行全局配置，决定页面文件的路径、窗口样式、原生的导航栏、底部的原生tabbar 等<br>main.js       是我们的项目入口文件，主要作用是初始化 vue 实例并使用需要的插件。<br>uni.scss      文件的用途是为了方便整体控制应用的风格。比如按钮颜色、边框风格，uni.scss 文件里预置了一批scss变量预置。</p>
+<p>为了实现多端兼容，综合考虑编译速度、运行性能等因素，<code>uni-app</code> 约定了如下开发规范：</p>
+<ul>
+<li>页面文件遵循 <a target="_blank" rel="noopener" href="https://vue-loader.vuejs.org/zh/spec.html">Vue 单文件组件 (SFC) 规范</a></li>
+<li>组件标签靠近小程序规范，详见<a target="_blank" rel="noopener" href="https://uniapp.dcloud.io/component/README">uni-app 组件规范</a></li>
+<li>接口能力（JS API）靠近微信小程序规范，但需将前缀 <code>wx</code> 替换为 <code>uni</code>，详见<a target="_blank" rel="noopener" href="https://uniapp.dcloud.io/api/README">uni-app接口规范</a></li>
+<li>数据绑定及事件处理同 <code>Vue.js</code> 规范，同时补充了App及页面的生命周期</li>
+<li>为兼容多端运行，建议使用flex布局进行开发</li>
+</ul>
+<a id="more"></a>
+
+<h3 id="全局配置和页面配置"><a href="#全局配置和页面配置" class="headerlink" title="全局配置和页面配置"></a>全局配置和页面配置</h3><h4 id="通过-pages-json-中-globalStyle-进行全局配置"><a href="#通过-pages-json-中-globalStyle-进行全局配置" class="headerlink" title="通过 pages.json 中 globalStyle 进行全局配置"></a>通过 pages.json 中 globalStyle 进行全局配置</h4><p>用于设置应用的状态栏、导航条、标题、窗口背景色等。<a target="_blank" rel="noopener" href="https://uniapp.dcloud.io/collocation/pages?id=globalstyle">详细文档</a></p>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>类型</th>
+<th>默认值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>navigationBarBackgroundColor</td>
+<td>HexColor</td>
+<td>#F7F7F7</td>
+<td>导航栏背景颜色（同状态栏背景色）</td>
+</tr>
+<tr>
+<td>navigationBarTextStyle</td>
+<td>String</td>
+<td>white</td>
+<td>导航栏标题颜色及状态栏前景颜色，仅支持 black/white</td>
+</tr>
+<tr>
+<td>navigationBarTitleText</td>
+<td>String</td>
+<td></td>
+<td>导航栏标题文字内容</td>
+</tr>
+<tr>
+<td>backgroundColor</td>
+<td>HexColor</td>
+<td>#ffffff</td>
+<td>窗口的背景色</td>
+</tr>
+<tr>
+<td>backgroundTextStyle</td>
+<td>String</td>
+<td>dark</td>
+<td>下拉 loading 的样式，仅支持 dark / light</td>
+</tr>
+<tr>
+<td>enablePullDownRefresh</td>
+<td>Boolean</td>
+<td>false</td>
+<td>是否开启下拉刷新，详见<a target="_blank" rel="noopener" href="https://uniapp.dcloud.io/use?id=%E9%A1%B5%E9%9D%A2%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F">页面生命周期</a>。</td>
+</tr>
+<tr>
+<td>onReachBottomDistance</td>
+<td>Number</td>
+<td>50</td>
+<td>页面上拉触底事件触发时距页面底部距离，单位只支持px，详见<a target="_blank" rel="noopener" href="https://uniapp.dcloud.io/use?id=%E9%A1%B5%E9%9D%A2%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F">页面生命周期</a></td>
+</tr>
+</tbody></table>
+<h4 id="通过-pages-json-中-pages-进行页面配置"><a href="#通过-pages-json-中-pages-进行页面配置" class="headerlink" title="通过 pages.json 中 pages 进行页面配置"></a>通过 pages.json 中 pages 进行页面配置</h4><table>
+<thead>
+<tr>
+<th>属性</th>
+<th>类型</th>
+<th>默认值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>path</td>
+<td>String</td>
+<td></td>
+<td>配置页面路径</td>
+</tr>
+<tr>
+<td>style</td>
+<td>Object</td>
+<td></td>
+<td>配置页面窗口表现，配置项参考 <a target="_blank" rel="noopener" href="https://uniapp.dcloud.io/collocation/pages?id=style">pageStyle</a></td>
+</tr>
+</tbody></table>
+<p>通过style修改页面的标题和导航栏背景色，并且设置h5下拉刷新的特有样式</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&quot;pages&quot;: [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="attr">&quot;path&quot;</span>:<span class="string">&quot;pages/message/message&quot;</span>,</span><br><span class="line">			<span class="attr">&quot;style&quot;</span>: &#123;</span><br><span class="line">				<span class="attr">&quot;navigationBarBackgroundColor&quot;</span>: <span class="string">&quot;#007AFF&quot;</span>,</span><br><span class="line">				<span class="attr">&quot;navigationBarTextStyle&quot;</span>: <span class="string">&quot;white&quot;</span>,</span><br><span class="line">				<span class="attr">&quot;enablePullDownRefresh&quot;</span>: <span class="literal">true</span>,</span><br><span class="line">				<span class="attr">&quot;disableScroll&quot;</span>: <span class="literal">true</span>,</span><br><span class="line">				<span class="attr">&quot;h5&quot;</span>: &#123;</span><br><span class="line">					<span class="attr">&quot;pullToRefresh&quot;</span>: &#123;</span><br><span class="line">						<span class="attr">&quot;color&quot;</span>: <span class="string">&quot;#007AFF&quot;</span></span><br><span class="line">					&#125;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	]</span><br></pre></td></tr></table></figure>
+
+<h3 id="配置tabbar"><a href="#配置tabbar" class="headerlink" title="配置tabbar"></a>配置tabbar</h3><p>如果应用是一个多 tab 应用，可以通过 tabBar 配置项指定 tab 栏的表现，以及 tab 切换时显示的对应页。</p>
+<p><strong>Tips</strong></p>
+<ul>
+<li>当设置 position 为 top 时，将不会显示 icon</li>
+<li>tabBar 中的 list 是一个数组，只能配置最少2个、最多5个 tab，tab 按数组的顺序排序。</li>
+</ul>
+<p><strong>属性说明：</strong></p>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>类型</th>
+<th>必填</th>
+<th>默认值</th>
+<th>描述</th>
+<th>平台差异说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>color</td>
+<td>HexColor</td>
+<td>是</td>
+<td></td>
+<td>tab 上的文字默认颜色</td>
+<td></td>
+</tr>
+<tr>
+<td>selectedColor</td>
+<td>HexColor</td>
+<td>是</td>
+<td></td>
+<td>tab 上的文字选中时的颜色</td>
+<td></td>
+</tr>
+<tr>
+<td>backgroundColor</td>
+<td>HexColor</td>
+<td>是</td>
+<td></td>
+<td>tab 的背景色</td>
+<td></td>
+</tr>
+<tr>
+<td>borderStyle</td>
+<td>String</td>
+<td>否</td>
+<td>black</td>
+<td>tabbar 上边框的颜色，仅支持 black/white</td>
+<td>App 2.3.4+ 支持其他颜色值</td>
+</tr>
+<tr>
+<td>list</td>
+<td>Array</td>
+<td>是</td>
+<td></td>
+<td>tab 的列表，详见 list 属性说明，最少2个、最多5个 tab</td>
+<td></td>
+</tr>
+<tr>
+<td>position</td>
+<td>String</td>
+<td>否</td>
+<td>bottom</td>
+<td>可选值 bottom、top</td>
+<td>top 值仅微信小程序支持</td>
+</tr>
+</tbody></table>
+<p>其中 list 接收一个数组，数组中的每个项都是一个对象，其属性值如下：</p>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>类型</th>
+<th>必填</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>pagePath</td>
+<td>String</td>
+<td>是</td>
+<td>页面路径，必须在 pages 中先定义</td>
+</tr>
+<tr>
+<td>text</td>
+<td>String</td>
+<td>是</td>
+<td>tab 上按钮文字，在 5+APP 和 H5 平台为非必填。例如中间可放一个没有文字的+号图标</td>
+</tr>
+<tr>
+<td>iconPath</td>
+<td>String</td>
+<td>否</td>
+<td>图片路径，icon 大小限制为40kb，建议尺寸为 81px * 81px，当 postion 为 top 时，此参数无效，不支持网络图片，不支持字体图标</td>
+</tr>
+<tr>
+<td>selectedIconPath</td>
+<td>String</td>
+<td>否</td>
+<td>选中时的图片路径，icon 大小限制为40kb，建议尺寸为 81px * 81px ，当 postion 为 top 时，此参数无效</td>
+</tr>
+</tbody></table>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&quot;tabBar&quot;: &#123;</span><br><span class="line">		&quot;color&quot;: &quot;#7A7E83&quot;,</span><br><span class="line">		&quot;selectedColor&quot;: &quot;#3cc51f&quot;,</span><br><span class="line">		&quot;borderStyle&quot;: &quot;black&quot;,</span><br><span class="line">		&quot;backgroundColor&quot;: &quot;#ffffff&quot;,</span><br><span class="line">		&quot;list&quot;: [&#123;</span><br><span class="line">			&quot;pagePath&quot;: &quot;pages/index/index&quot;,</span><br><span class="line">			&quot;iconPath&quot;: &quot;static/tabs/home.png&quot;,</span><br><span class="line">			&quot;selectedIconPath&quot;: &quot;static/tabs/home-active.png&quot;,</span><br><span class="line">			&quot;text&quot;: &quot;组件&quot;</span><br><span class="line">		&#125;, &#123;</span><br><span class="line">			&quot;pagePath&quot;: &quot;pages/index/index&quot;,</span><br><span class="line">			&quot;iconPath&quot;: &quot;static/tabs/message.png&quot;,</span><br><span class="line">			&quot;selectedIconPath&quot;: &quot;static/tabs/message-active.png&quot;,</span><br><span class="line">			&quot;text&quot;: &quot;接口&quot;</span><br><span class="line">		&#125;]</span><br><span class="line">		<span class="comment">// &quot;position&quot;: &quot;top&quot;</span></span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="condition启动模式配置"><a href="#condition启动模式配置" class="headerlink" title="condition启动模式配置"></a>condition启动模式配置</h3><p>启动模式配置，仅开发期间生效，用于模拟直达页面的场景，如：小程序转发后，用户点击所打开的页面。</p>
+<p><strong>属性说明：</strong></p>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>类型</th>
+<th>是否必填</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>current</td>
+<td>Number</td>
+<td>是</td>
+<td>当前激活的模式，list节点的索引值</td>
+</tr>
+<tr>
+<td>list</td>
+<td>Array</td>
+<td>是</td>
+<td>启动模式列表</td>
+</tr>
+</tbody></table>
+<p><strong>list说明：</strong></p>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>类型</th>
+<th>是否必填</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>name</td>
+<td>String</td>
+<td>是</td>
+<td>启动模式名称</td>
+</tr>
+<tr>
+<td>path</td>
+<td>String</td>
+<td>是</td>
+<td>启动页面路径</td>
+</tr>
+<tr>
+<td>query</td>
+<td>String</td>
+<td>否</td>
+<td>启动参数，可在页面的 <a target="_blank" rel="noopener" href="https://uniapp.dcloud.io/use?id=%E9%A1%B5%E9%9D%A2%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F">onLoad</a> 函数里获得</td>
+</tr>
+</tbody></table>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&quot;condition&quot;: &#123; </span><br><span class="line">	    &quot;current&quot;: 0, </span><br><span class="line">	    &quot;list&quot;: [&#123;</span><br><span class="line">	            &quot;name&quot;: &quot;Scan code&quot;, </span><br><span class="line">	            &quot;path&quot;: &quot;pages/index/index&quot;, </span><br><span class="line">	            &quot;query&quot;: &quot;interval=4000&amp;autoplay=false&quot; </span><br><span class="line">	        &#125;</span><br><span class="line">	    ]</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="组件的基本使用"><a href="#组件的基本使用" class="headerlink" title="组件的基本使用"></a>组件的基本使用</h3><p>uni-app提供了丰富的基础组件给开发者，开发者可以像搭积木一样，组合各种组件拼接称自己的应用</p>
+<p>uni-app中的组件，就像 <code>HTML</code> 中的 <code>div</code> 、<code>p</code>、<code>span</code> 等标签的作用一样，用于搭建页面的基础结构</p>
+<h4 id="text-文本组件的用法"><a href="#text-文本组件的用法" class="headerlink" title="text 文本组件的用法"></a>text 文本组件的用法</h4><h5 id="text-组件的属性"><a href="#text-组件的属性" class="headerlink" title="text 组件的属性"></a>text 组件的属性</h5><table>
+<thead>
+<tr>
+<th align="center">属性</th>
+<th align="center">类型</th>
+<th align="center">默认值</th>
+<th align="center">必填</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">selectable</td>
+<td align="center">boolean</td>
+<td align="center">false</td>
+<td align="center">否</td>
+<td align="center">文本是否可选</td>
+</tr>
+<tr>
+<td align="center">space</td>
+<td align="center">string</td>
+<td align="center">.</td>
+<td align="center">否</td>
+<td align="center">显示连续空格，可选参数：<code>ensp</code>、<code>emsp</code>、<code>nbsp</code></td>
+</tr>
+<tr>
+<td align="center">decode</td>
+<td align="center">boolean</td>
+<td align="center">false</td>
+<td align="center">否</td>
+<td align="center">是否解码</td>
+</tr>
+</tbody></table>
+<ul>
+<li><code>text</code> 组件相当于行内标签、在同一行显示</li>
+<li>除了文本节点以外的其他节点都无法长按选中</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;view&gt;</span><br><span class="line">    &lt;!-- 长按文本是否可选 --&gt;</span><br><span class="line">    &lt;text selectable&gt;来了老弟&lt;&#x2F;text&gt;</span><br><span class="line">  &lt;&#x2F;view&gt;</span><br><span class="line"></span><br><span class="line">  &lt;view&gt;</span><br><span class="line">    &lt;!-- 显示连续空格的方式 --&gt;</span><br><span class="line">    &lt;view&gt;</span><br><span class="line">      &lt;text space&#x3D;&#39;ensp&#39;&gt;来了  老弟&lt;&#x2F;text&gt;</span><br><span class="line">    &lt;&#x2F;view&gt;</span><br><span class="line">    &lt;view&gt;</span><br><span class="line">      &lt;text space&#x3D;&#39;emsp&#39;&gt;来了  老弟&lt;&#x2F;text&gt;</span><br><span class="line">    &lt;&#x2F;view&gt;</span><br><span class="line">    &lt;view&gt;</span><br><span class="line">      &lt;text space&#x3D;&#39;nbsp&#39;&gt;来了  老弟&lt;&#x2F;text&gt;</span><br><span class="line">    &lt;&#x2F;view&gt;</span><br><span class="line">  &lt;&#x2F;view&gt;</span><br><span class="line">  &lt;view&gt;</span><br><span class="line">    &lt;!-- 是否解码 --&gt;</span><br><span class="line">    &lt;text decode&#x3D;&#39;true&#39;&gt;&amp;nbsp; &lt; &gt; &amp; &amp;apos; &amp;ensp; &amp;emsp;&lt;&#x2F;text&gt;</span><br><span class="line">  &lt;&#x2F;view&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br></pre></td></tr></table></figure>
+
+<h4 id="view-视图容器组件的用法"><a href="#view-视图容器组件的用法" class="headerlink" title="view 视图容器组件的用法"></a>view 视图容器组件的用法</h4><blockquote>
+<p>View 视图容器， 类似于 HTML 中的 div</p>
+</blockquote>
+<h5 id="view-组件的属性"><a href="#view-组件的属性" class="headerlink" title="view 组件的属性"></a>view 组件的属性</h5><table>
+<thead>
+<tr>
+<th align="center">属性</th>
+<th align="center">类型</th>
+<th align="center">默认值</th>
+<th align="center">必填</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">hover-class</td>
+<td align="center">String</td>
+<td align="center">none</td>
+<td align="center">否</td>
+<td align="center">指定按下去的样式类。当 hover-class=”none” 时，没有点击态效果</td>
+</tr>
+<tr>
+<td align="center">hover-stop-propagation</td>
+<td align="center">Boolean</td>
+<td align="center">false</td>
+<td align="center">否</td>
+<td align="center">指定是否阻止本节点的祖先节点出现点击态</td>
+</tr>
+<tr>
+<td align="center">hover-start-time</td>
+<td align="center">Number</td>
+<td align="center">50</td>
+<td align="center">否</td>
+<td align="center">按住后多久出现点击态，单位毫秒</td>
+</tr>
+<tr>
+<td align="center">hover-stay-time</td>
+<td align="center">Number</td>
+<td align="center">400</td>
+<td align="center">否</td>
+<td align="center">手指松开后点击态保留时间，单位毫秒</td>
+</tr>
+</tbody></table>
+<h4 id="button-按钮组件的用法"><a href="#button-按钮组件的用法" class="headerlink" title="button 按钮组件的用法"></a>button 按钮组件的用法</h4><h5 id="button-组件的属性"><a href="#button-组件的属性" class="headerlink" title="button 组件的属性"></a>button 组件的属性</h5><table>
+<thead>
+<tr>
+<th align="center">属性名</th>
+<th align="center">类型</th>
+<th align="center">默认值</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">size</td>
+<td align="center">String</td>
+<td align="center">default</td>
+<td align="center">按钮的大小</td>
+</tr>
+<tr>
+<td align="center">type</td>
+<td align="center">String</td>
+<td align="center">default</td>
+<td align="center">按钮的样式类型</td>
+</tr>
+<tr>
+<td align="center">plain</td>
+<td align="center">Boolean</td>
+<td align="center">false</td>
+<td align="center">按钮是否镂空，背景色透明</td>
+</tr>
+<tr>
+<td align="center">disabled</td>
+<td align="center">Boolean</td>
+<td align="center">false</td>
+<td align="center">是否按钮</td>
+</tr>
+<tr>
+<td align="center">loading</td>
+<td align="center">Boolean</td>
+<td align="center">false</td>
+<td align="center">名称是否带 loading t图标</td>
+</tr>
+</tbody></table>
+<ul>
+<li><code>button</code> 组件默认独占一行，设置 <code>size</code> 为 <code>mini</code> 时可以在一行显示多个</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;button size&#x3D;&#39;mini&#39; type&#x3D;&#39;primary&#39;&gt;前端&lt;&#x2F;button&gt;</span><br><span class="line">  &lt;button size&#x3D;&#39;mini&#39; type&#x3D;&#39;default&#39; disabled&#x3D;&#39;true&#39;&gt;前端&lt;&#x2F;button&gt;</span><br><span class="line">  &lt;button size&#x3D;&#39;mini&#39; type&#x3D;&#39;warn&#39; loading&#x3D;&#39;true&#39;&gt;前端&lt;&#x2F;button&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br></pre></td></tr></table></figure>
+
+<h4 id="image-组件的使用"><a href="#image-组件的使用" class="headerlink" title="image 组件的使用"></a>image 组件的使用</h4><h5 id="image-组件的属性"><a href="#image-组件的属性" class="headerlink" title="image 组件的属性"></a>image 组件的属性</h5><p>图片。</p>
+<table>
+<thead>
+<tr>
+<th>属性名</th>
+<th>类型</th>
+<th>默认值</th>
+<th>说明</th>
+<th>平台差异说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>src</td>
+<td>String</td>
+<td></td>
+<td>图片资源地址</td>
+<td></td>
+</tr>
+<tr>
+<td>mode</td>
+<td>String</td>
+<td>‘scaleToFill’</td>
+<td>图片裁剪、缩放的模式</td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="uni-app中的样式"><a href="#uni-app中的样式" class="headerlink" title="uni-app中的样式"></a>uni-app中的样式</h3><ul>
+<li><p>rpx 即响应式px，一种根据屏幕宽度自适应的动态单位。以750宽的屏幕为基准，750rpx恰好为屏幕宽度。屏幕变宽，rpx 实际显示效果会等比放大。</p>
+</li>
+<li><p>使用<code>@import</code>语句可以导入外联样式表，<code>@import</code>后跟需要导入的外联样式表的相对路径，用<code>;</code>表示语句结束</p>
+</li>
+<li><p>支持基本常用的选择器class、id、element等</p>
+</li>
+<li><p>在 <code>uni-app</code> 中不能使用 <code>*</code> 选择器。</p>
+</li>
+<li><p><code>page</code> 相当于 <code>body</code> 节点</p>
+</li>
+<li><p>定义在 App.vue 中的样式为全局样式，作用于每一个页面。在 pages 目录下 的 vue 文件中定义的样式为局部样式，只作用在对应的页面，并会覆盖 App.vue 中相同的选择器</p>
+</li>
+<li><p><code>uni-app</code> 支持使用字体图标，使用方式与普通 <code>web</code> 项目相同，需要注意以下几点：</p>
+<pre><code>  - 字体文件小于 40kb，`uni-app` 会自动将其转化为 base64 格式；
+  - 字体文件大于等于 40kb， 需开发者自己转换，否则使用将不生效；
+  - 字体文件的引用路径推荐使用以 ~@ 开头的绝对路径。
+
+  <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">@font-face</span> &#123;</span><br><span class="line">		<span class="attribute">font-family</span>: test1-icon;</span><br><span class="line">		<span class="attribute">src</span>: <span class="built_in">url</span>(<span class="string">&#x27;~@/static/iconfont.ttf&#x27;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></code></pre>
+</li>
+<li><p>如何使用scss或者less</p>
+</li>
+</ul>
+<h3 id="uni-app-中的数据绑定"><a href="#uni-app-中的数据绑定" class="headerlink" title="uni-app 中的数据绑定"></a>uni-app 中的数据绑定</h3><p>在页面中需要定义数据，和我们之前的vue一摸一样，直接在data中定义数据即可</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">	data () &#123;</span><br><span class="line">		<span class="keyword">return</span> &#123;</span><br><span class="line">			msg: <span class="string">&#x27;hello-uni&#x27;</span></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>利用插值表达式渲染基本数据</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">view</span>&gt;</span>&#123;&#123;msg&#125;&#125;<span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在插值表达式中使用三元运算</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">view</span>&gt;</span>&#123;&#123; flag ? &#x27;我是真的&#x27;:&#x27;我是假的&#x27; &#125;&#125;<span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>基本运算</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">view</span>&gt;</span>&#123;&#123;1+1&#125;&#125;<span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="v-bind-动态绑定属性"><a href="#v-bind-动态绑定属性" class="headerlink" title="v-bind 动态绑定属性"></a>v-bind 动态绑定属性</h3><p>在data中定义了一张图片，我们希望把这张图片渲染到页面上</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  data () &#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">      img: <span class="string">&#x27;http://destiny001.gitee.io/image/monkey_02.jpg&#x27;</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>利用v-bind进行渲染</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">image</span> <span class="attr">v-bind:src</span>=<span class="string">&quot;img&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">image</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>还可以缩写成:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">image</span> <span class="attr">:src</span>=<span class="string">&quot;img&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">image</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="v-for-的使用"><a href="#v-for-的使用" class="headerlink" title="v-for 的使用"></a>v-for 的使用</h3><p>data中定以一个数组，最终将数组渲染到页面上</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">data () &#123;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    arr: [</span><br><span class="line">      &#123; <span class="attr">name</span>: <span class="string">&#x27;刘能&#x27;</span>, <span class="attr">age</span>: <span class="number">29</span> &#125;,</span><br><span class="line">      &#123; <span class="attr">name</span>: <span class="string">&#x27;赵四&#x27;</span>, <span class="attr">age</span>: <span class="number">39</span> &#125;,</span><br><span class="line">      &#123; <span class="attr">name</span>: <span class="string">&#x27;宋小宝&#x27;</span>, <span class="attr">age</span>: <span class="number">49</span> &#125;,</span><br><span class="line">      &#123; <span class="attr">name</span>: <span class="string">&#x27;小沈阳&#x27;</span>, <span class="attr">age</span>: <span class="number">59</span> &#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>利用v-for进行循环</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">	&lt;view v-for&#x3D;&quot;(item,i) in arr&quot; :key&#x3D;&quot;i&quot;&gt;名字：&#123;&#123;item.name&#125;&#125;---年龄：&#123;&#123;item.age&#125;&#125;&lt;&#x2F;view&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="uni-中的事件"><a href="#uni-中的事件" class="headerlink" title="uni 中的事件"></a>uni 中的事件</h3><h4 id="事件绑定"><a href="#事件绑定" class="headerlink" title="事件绑定"></a>事件绑定</h4><p>在uni中事件绑定和vue中是一样的，通过v-on进行事件的绑定，也可以简写为@</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;tapHandle&quot;</span>&gt;</span>点我啊<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>事件函数定义在methods中</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">methods: &#123;</span><br><span class="line">  tapHandle () &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&#x27;真的点我了&#x27;</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="事件传参"><a href="#事件传参" class="headerlink" title="事件传参"></a>事件传参</h4><ul>
+<li>默认如果没有传递参数，事件函数第一个形参为事件对象</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">	&lt;button @click&#x3D;&quot;tapHandle&quot;&gt;点我啊&lt;&#x2F;button&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">	methods: &#123;</span><br><span class="line">		tapHandle (e) &#123;</span><br><span class="line">			console.log(e)</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>如果给事件函数传递参数了，则对应的事件函数形参接收的则是传递过来的数据</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">	&lt;button @click&#x3D;&quot;tapHandle(1)&quot;&gt;点我啊&lt;&#x2F;button&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br><span class="line"> &lt;script&gt;</span><br><span class="line"> methods: &#123;</span><br><span class="line">   tapHandle (num) &#123;</span><br><span class="line">     console.log(num)</span><br><span class="line">   &#125;</span><br><span class="line"> &#125;</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>如果获取事件对象也想传递参数</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"> &lt;template&gt;</span><br><span class="line"> 	&lt;button @click&#x3D;&quot;tapHandle(1,$event)&quot;&gt;点我啊&lt;&#x2F;button&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br><span class="line"> &lt;script&gt;</span><br><span class="line">	methods: &#123;</span><br><span class="line">		tapHandle (num,e) &#123;</span><br><span class="line">			console.log(num,e)</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="uni-的生命周期"><a href="#uni-的生命周期" class="headerlink" title="uni 的生命周期"></a>uni 的生命周期</h3><h4 id="应用的生命周期"><a href="#应用的生命周期" class="headerlink" title="应用的生命周期"></a>应用的生命周期</h4><p>生命周期的概念：一个对象从创建、运行、销毁的整个过程被成为生命周期。</p>
+<p>生命周期函数：在生命周期中每个阶段会伴随着每一个函数的触发，这些函数被称为生命周期函数</p>
+<p><code>uni-app</code> 支持如下应用生命周期函数：</p>
+<table>
+<thead>
+<tr>
+<th>函数名</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>onLaunch</td>
+<td>当<code>uni-app</code> 初始化完成时触发（全局只触发一次）</td>
+</tr>
+<tr>
+<td>onShow</td>
+<td>当 <code>uni-app</code> 启动，或从后台进入前台显示</td>
+</tr>
+<tr>
+<td>onHide</td>
+<td>当 <code>uni-app</code> 从前台进入后台</td>
+</tr>
+<tr>
+<td>onError</td>
+<td>当 <code>uni-app</code> 报错时触发</td>
+</tr>
+</tbody></table>
+<h4 id="页面的生命周期"><a href="#页面的生命周期" class="headerlink" title="页面的生命周期"></a>页面的生命周期</h4><p><code>uni-app</code> 支持如下页面生命周期函数：</p>
+<table>
+<thead>
+<tr>
+<th>函数名</th>
+<th>说明</th>
+<th>平台差异说明</th>
+<th>最低版本</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>onLoad</td>
+<td>监听页面加载，其参数为上个页面传递的数据，参数类型为Object（用于页面传参），参考<a target="_blank" rel="noopener" href="https://uniapp.dcloud.io/api/router?id=navigateto">示例</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>onShow</td>
+<td>监听页面显示。页面每次出现在屏幕上都触发，包括从下级页面点返回露出当前页面</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>onReady</td>
+<td>监听页面初次渲染完成。</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>onHide</td>
+<td>监听页面隐藏</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>onUnload</td>
+<td>监听页面卸载</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="下拉刷新"><a href="#下拉刷新" class="headerlink" title="下拉刷新"></a>下拉刷新</h3><h4 id="开启下拉刷新"><a href="#开启下拉刷新" class="headerlink" title="开启下拉刷新"></a>开启下拉刷新</h4><p>在uni-app中有两种方式开启下拉刷新</p>
+<ul>
+<li>需要在 <code>pages.json</code> 里，找到的当前页面的pages节点，并在 <code>style</code> 选项中开启 <code>enablePullDownRefresh</code></li>
+<li>通过调用uni.startPullDownRefresh方法来开启下拉刷新</li>
+</ul>
+<h4 id="通过配置文件开启"><a href="#通过配置文件开启" class="headerlink" title="通过配置文件开启"></a>通过配置文件开启</h4><p>创建list页面进行演示</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">	&lt;view&gt;</span><br><span class="line">		杭州学科</span><br><span class="line">		&lt;view v-for&#x3D;&quot;(item,index) in arr&quot; :key&#x3D;&quot;index&quot;&gt;</span><br><span class="line">			&#123;&#123;item&#125;&#125;</span><br><span class="line">		&lt;&#x2F;view&gt;</span><br><span class="line">	&lt;&#x2F;view&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">	export default &#123;</span><br><span class="line">		data () &#123;</span><br><span class="line">			return &#123;</span><br><span class="line">				arr: [&#39;前端&#39;,&#39;java&#39;,&#39;ui&#39;,&#39;大数据&#39;]</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
+
+<p>通过 pages.json 文件中找到当前页面的 pages 节点，并在 <code>style</code> 选项中开启 <code>enablePullDownRefresh</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="string">&quot;path&quot;</span>:<span class="string">&quot;pages/list/list&quot;</span>,</span><br><span class="line">    <span class="string">&quot;style&quot;</span>:&#123;</span><br><span class="line">      <span class="string">&quot;enablePullDownRefresh&quot;</span>: <span class="literal">true</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="通过API开启"><a href="#通过API开启" class="headerlink" title="通过API开启"></a>通过API开启</h4><p><a target="_blank" rel="noopener" href="https://uniapp.dcloud.io/api/ui/pulldown">api文档</a></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">uni.startPullDownRefresh()</span><br></pre></td></tr></table></figure>
+
+<h4 id="监听下拉刷新"><a href="#监听下拉刷新" class="headerlink" title="监听下拉刷新"></a>监听下拉刷新</h4><p>通过onPullDownRefresh可以监听到下拉刷新的动作</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  data () &#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">      arr: [<span class="string">&#x27;前端&#x27;</span>,<span class="string">&#x27;java&#x27;</span>,<span class="string">&#x27;ui&#x27;</span>,<span class="string">&#x27;大数据&#x27;</span>]</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  methods: &#123;</span><br><span class="line">    startPull () &#123;</span><br><span class="line">      uni.startPullDownRefresh()</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  onPullDownRefresh () &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&#x27;触发下拉刷新了&#x27;</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="关闭下拉刷新"><a href="#关闭下拉刷新" class="headerlink" title="关闭下拉刷新"></a>关闭下拉刷新</h4><p>uni.stopPullDownRefresh()</p>
+<p>停止当前页面下拉刷新。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">	&lt;view&gt;</span><br><span class="line">		&lt;button type&#x3D;&quot;primary&quot; @click&#x3D;&quot;startPull&quot;&gt;开启下拉刷新&lt;&#x2F;button&gt;</span><br><span class="line">		杭州学科</span><br><span class="line">		&lt;view v-for&#x3D;&quot;(item,index) in arr&quot; :key&#x3D;&quot;index&quot;&gt;</span><br><span class="line">			&#123;&#123;item&#125;&#125;</span><br><span class="line">		&lt;&#x2F;view&gt;</span><br><span class="line">	&lt;&#x2F;view&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">	export default &#123;</span><br><span class="line">		data () &#123;</span><br><span class="line">			return &#123;</span><br><span class="line">				arr: [&#39;前端&#39;,&#39;java&#39;,&#39;ui&#39;,&#39;大数据&#39;]</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;,</span><br><span class="line">		methods: &#123;</span><br><span class="line">			startPull () &#123;</span><br><span class="line">				uni.startPullDownRefresh()</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;,</span><br><span class="line">		</span><br><span class="line">		onPullDownRefresh () &#123;</span><br><span class="line">			this.arr &#x3D; []</span><br><span class="line">			setTimeout(()&#x3D;&gt; &#123;</span><br><span class="line">				this.arr &#x3D; [&#39;前端&#39;,&#39;java&#39;,&#39;ui&#39;,&#39;大数据&#39;]</span><br><span class="line">				uni.stopPullDownRefresh()</span><br><span class="line">			&#125;, 1000);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="上拉加载"><a href="#上拉加载" class="headerlink" title="上拉加载"></a>上拉加载</h3><p>通过在 pages.json 文件中找到当前页面的 pages 节点下 style 中配置 onReachBottomDistance 可以设置距离底部开启加载的距离，默认为50px。</p>
+<p>通过onReachBottom监听到触底的行为</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">	&lt;view&gt;</span><br><span class="line">		&lt;button type&#x3D;&quot;primary&quot; @click&#x3D;&quot;startPull&quot;&gt;开启下拉刷新&lt;&#x2F;button&gt;</span><br><span class="line">		杭州学科</span><br><span class="line">		&lt;view v-for&#x3D;&quot;(item,index) in arr&quot; :key&#x3D;&quot;index&quot;&gt;</span><br><span class="line">			&#123;&#123;item&#125;&#125;</span><br><span class="line">		&lt;&#x2F;view&gt;</span><br><span class="line">	&lt;&#x2F;view&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">	export default &#123;</span><br><span class="line">		data () &#123;</span><br><span class="line">			return &#123;</span><br><span class="line">				arr: [&#39;前端&#39;,&#39;java&#39;,&#39;ui&#39;,&#39;大数据&#39;,&#39;前端&#39;,&#39;java&#39;,&#39;ui&#39;,&#39;大数据&#39;]</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;,</span><br><span class="line">		onReachBottom () &#123;</span><br><span class="line">			console.log(&#39;触底了&#39;)</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&lt;&#x2F;script&gt;</span><br><span class="line"></span><br><span class="line">&lt;style&gt;</span><br><span class="line">	view&#123;</span><br><span class="line">		height: 100px;</span><br><span class="line">		line-height: 100px;</span><br><span class="line">	&#125;</span><br><span class="line">&lt;&#x2F;style&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="网络请求"><a href="#网络请求" class="headerlink" title="网络请求"></a>网络请求</h3><p>在 uni 中可以调用 uni.request 方法进行请求网络请求</p>
+<p>需要注意的是：在小程序中网络相关的 API 在使用前需要配置域名白名单。</p>
+<p><strong>发送get请求</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">	&lt;view&gt;</span><br><span class="line">		&lt;button @click&#x3D;&quot;sendGet&quot;&gt;发送请求&lt;&#x2F;button&gt;</span><br><span class="line">	&lt;&#x2F;view&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">	export default &#123;</span><br><span class="line">		methods: &#123;</span><br><span class="line">			sendGet () &#123;</span><br><span class="line">				uni.request(&#123;</span><br><span class="line">					url: &#39;http:&#x2F;&#x2F;localhost:8082&#x2F;api&#x2F;getlunbo&#39;,</span><br><span class="line">					success(res) &#123;</span><br><span class="line">						console.log(res)</span><br><span class="line">					&#125;</span><br><span class="line">				&#125;)</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
+
+<p><strong>发送post请求</strong></p>
+<h3 id="数据缓存"><a href="#数据缓存" class="headerlink" title="数据缓存"></a>数据缓存</h3><h4 id="uni-setStorage"><a href="#uni-setStorage" class="headerlink" title="uni.setStorage"></a><strong>uni.setStorage</strong></h4><p>将数据存储在本地缓存中指定的 key 中，会覆盖掉原来该 key 对应的内容，这是一个异步接口。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">	&lt;view&gt;</span><br><span class="line">		&lt;button type&#x3D;&quot;primary&quot; @click&#x3D;&quot;setStor&quot;&gt;存储数据&lt;&#x2F;button&gt;</span><br><span class="line">	&lt;&#x2F;view&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">	export default &#123;</span><br><span class="line">		methods: &#123;</span><br><span class="line">			setStor () &#123;</span><br><span class="line">				uni.setStorage(&#123;</span><br><span class="line">					key: &#39;id&#39;,</span><br><span class="line">					data: 100,</span><br><span class="line">					success () &#123;</span><br><span class="line">						console.log(&#39;存储成功&#39;)</span><br><span class="line">					&#125;</span><br><span class="line">				&#125;)</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&lt;&#x2F;script&gt;</span><br><span class="line"></span><br><span class="line">&lt;style&gt;</span><br><span class="line">&lt;&#x2F;style&gt;</span><br></pre></td></tr></table></figure>
+
+<h4 id="uni-setStorageSync"><a href="#uni-setStorageSync" class="headerlink" title="uni.setStorageSync"></a>uni.setStorageSync</h4><p>将 data 存储在本地缓存中指定的 key 中，会覆盖掉原来该 key 对应的内容，这是一个同步接口。</p>
+<p>代码演示</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">	&lt;view&gt;</span><br><span class="line">		&lt;button type=<span class="string">&quot;primary&quot;</span> @click=<span class="string">&quot;setStor&quot;</span>&gt;存储数据&lt;/button&gt;</span><br><span class="line">	&lt;/view&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">	<span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">		methods: &#123;</span><br><span class="line">			setStor () &#123;</span><br><span class="line">				uni.setStorageSync(<span class="string">&#x27;id&#x27;</span>,<span class="number">100</span>)</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;style&gt;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+
+<h4 id="uni-getStorage"><a href="#uni-getStorage" class="headerlink" title="uni.getStorage"></a>uni.getStorage</h4><p>从本地缓存中异步获取指定 key 对应的内容。</p>
+<p>代码演示</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">	<span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">view</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">&quot;primary&quot;</span> @<span class="attr">click</span>=<span class="string">&quot;getStorage&quot;</span>&gt;</span>获取数据<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">		<span class="keyword">export</span> <span class="keyword">default</span> &#123;</span></span><br><span class="line">			data () &#123;</span><br><span class="line"><span class="javascript">				<span class="keyword">return</span> &#123;</span></span><br><span class="line"><span class="javascript">					id: <span class="string">&#x27;&#x27;</span></span></span><br><span class="line">				&#125;</span><br><span class="line">			&#125;,</span><br><span class="line">			methods: &#123;</span><br><span class="line">				getStorage () &#123;</span><br><span class="line">					uni.getStorage(&#123;</span><br><span class="line"><span class="javascript">						key: <span class="string">&#x27;id&#x27;</span>,</span></span><br><span class="line"><span class="javascript">						success:  <span class="function"><span class="params">res</span>=&gt;</span>&#123;</span></span><br><span class="line"><span class="javascript">							<span class="built_in">this</span>.id = res.data</span></span><br><span class="line">						&#125;</span><br><span class="line">					&#125;)</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="uni-getStorageSync"><a href="#uni-getStorageSync" class="headerlink" title="uni.getStorageSync"></a>uni.getStorageSync</h4><p>从本地缓存中同步获取指定 key 对应的内容。</p>
+<p>代码演示</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">view</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">&quot;primary&quot;</span> @<span class="attr">click</span>=<span class="string">&quot;getStorage&quot;</span>&gt;</span>获取数据<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">	<span class="keyword">export</span> <span class="keyword">default</span> &#123;</span></span><br><span class="line">		methods: &#123;</span><br><span class="line">			getStorage () &#123;</span><br><span class="line"><span class="javascript">				<span class="keyword">const</span> id = uni.getStorageSync(<span class="string">&#x27;id&#x27;</span>)</span></span><br><span class="line"><span class="javascript">				<span class="built_in">console</span>.log(id)</span></span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="uni-removeStorage"><a href="#uni-removeStorage" class="headerlink" title="uni.removeStorage"></a>uni.removeStorage</h4><p>从本地缓存中异步移除指定 key。</p>
+<p>代码演示</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">view</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">&quot;primary&quot;</span> @<span class="attr">click</span>=<span class="string">&quot;removeStorage&quot;</span>&gt;</span>删除数据<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">	<span class="keyword">export</span> <span class="keyword">default</span> &#123;</span></span><br><span class="line">		methods: &#123;</span><br><span class="line">			removeStorage () &#123;</span><br><span class="line">				uni.removeStorage(&#123;</span><br><span class="line"><span class="javascript">					key: <span class="string">&#x27;id&#x27;</span>,</span></span><br><span class="line"><span class="javascript">					success: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">						<span class="built_in">console</span>.log(<span class="string">&#x27;删除成功&#x27;</span>)</span></span><br><span class="line">					&#125;</span><br><span class="line">				&#125;)</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="uni-removeStorageSync"><a href="#uni-removeStorageSync" class="headerlink" title="uni.removeStorageSync"></a>uni.removeStorageSync</h4><p>从本地缓存中同步移除指定 key。</p>
+<p>代码演示</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">view</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">&quot;primary&quot;</span> @<span class="attr">click</span>=<span class="string">&quot;removeStorage&quot;</span>&gt;</span>删除数据<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">	<span class="keyword">export</span> <span class="keyword">default</span> &#123;</span></span><br><span class="line">		methods: &#123;</span><br><span class="line">			removeStorage () &#123;</span><br><span class="line"><span class="javascript">				uni.removeStorageSync(<span class="string">&#x27;id&#x27;</span>)</span></span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="上传图片、预览图片"><a href="#上传图片、预览图片" class="headerlink" title="上传图片、预览图片"></a>上传图片、预览图片</h3><h4 id="上传图片"><a href="#上传图片" class="headerlink" title="上传图片"></a>上传图片</h4><p>uni.chooseImage方法从本地相册选择图片或使用相机拍照。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">	&lt;view&gt;</span><br><span class="line">		&lt;button @click&#x3D;&quot;chooseImg&quot; type&#x3D;&quot;primary&quot;&gt;上传图片&lt;&#x2F;button&gt;</span><br><span class="line">		&lt;view&gt;</span><br><span class="line">			&lt;image v-for&#x3D;&quot;item in imgArr&quot; :src&#x3D;&quot;item&quot; :key&#x3D;&quot;index&quot;&gt;&lt;&#x2F;image&gt;</span><br><span class="line">		&lt;&#x2F;view&gt;</span><br><span class="line">	&lt;&#x2F;view&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">	export default &#123;</span><br><span class="line">		data () &#123;</span><br><span class="line">			return &#123;</span><br><span class="line">				imgArr: []</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;,</span><br><span class="line">		methods: &#123;</span><br><span class="line">			chooseImg () &#123;</span><br><span class="line">				uni.chooseImage(&#123;</span><br><span class="line">					count: 9,</span><br><span class="line">					success: res&#x3D;&gt;&#123;</span><br><span class="line">						this.imgArr &#x3D; res.tempFilePaths</span><br><span class="line">					&#125;</span><br><span class="line">				&#125;)</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
+
+<h4 id="预览图片"><a href="#预览图片" class="headerlink" title="预览图片"></a>预览图片</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">	&lt;view&gt;</span><br><span class="line">		&lt;image v-for&#x3D;&quot;item in imgArr&quot; :src&#x3D;&quot;item&quot; @click&#x3D;&quot;previewImg(item)&quot; :key&#x3D;&quot;item&quot;&gt;&lt;&#x2F;image&gt;</span><br><span class="line">	&lt;&#x2F;view&gt;</span><br><span class="line">&lt;template&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">&#x2F;&#x2F; 预览图片的方法</span><br><span class="line">previewImg (current) &#123;</span><br><span class="line">	uni.previewImage(&#123;</span><br><span class="line">		urls: this.imgArr,</span><br><span class="line">		current</span><br><span class="line">	&#125;)</span><br><span class="line">&#125;</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="条件注释实现跨段兼容"><a href="#条件注释实现跨段兼容" class="headerlink" title="条件注释实现跨段兼容"></a>条件注释实现跨段兼容</h3><p>条件编译是用特殊的注释作为标记，在编译时根据这些特殊的注释，将注释里面的代码编译到不同平台。</p>
+<p><strong>写法：</strong>以 #ifdef 加平台标识 开头，以 #endif 结尾。</p>
+<p>平台标识</p>
+<table>
+<thead>
+<tr>
+<th>值</th>
+<th>平台</th>
+<th>参考文档</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>APP-PLUS</td>
+<td>5+App</td>
+<td><a target="_blank" rel="noopener" href="http://www.html5plus.org/doc/">HTML5+ 规范</a></td>
+</tr>
+<tr>
+<td>H5</td>
+<td>H5</td>
+<td></td>
+</tr>
+<tr>
+<td>MP-WEIXIN</td>
+<td>微信小程序</td>
+<td><a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/api/">微信小程序</a></td>
+</tr>
+<tr>
+<td>MP-ALIPAY</td>
+<td>支付宝小程序</td>
+<td><a target="_blank" rel="noopener" href="https://docs.alipay.com/mini/developer/getting-started">支付宝小程序</a></td>
+</tr>
+<tr>
+<td>MP-BAIDU</td>
+<td>百度小程序</td>
+<td><a target="_blank" rel="noopener" href="https://smartprogram.baidu.com/docs/develop/tutorial/codedir/">百度小程序</a></td>
+</tr>
+<tr>
+<td>MP-TOUTIAO</td>
+<td>头条小程序</td>
+<td><a target="_blank" rel="noopener" href="https://developer.toutiao.com/dev/cn/mini-app/develop/framework/basic-reference/introduction">头条小程序</a></td>
+</tr>
+<tr>
+<td>MP-QQ</td>
+<td>QQ小程序</td>
+<td>（目前仅cli版支持）</td>
+</tr>
+<tr>
+<td>MP</td>
+<td>微信小程序/支付宝小程序/百度小程序/头条小程序/QQ小程序</td>
+<td></td>
+</tr>
+</tbody></table>
+<h4 id="组件的条件注释"><a href="#组件的条件注释" class="headerlink" title="组件的条件注释"></a>组件的条件注释</h4><p>代码演示</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- #ifdef H5 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">view</span>&gt;</span></span><br><span class="line">	h5页面会显示</span><br><span class="line"><span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- #endif --&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- #ifdef MP-WEIXIN --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">view</span>&gt;</span></span><br><span class="line">	微信小程序会显示</span><br><span class="line"><span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- #endif --&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- #ifdef APP-PLUS --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">view</span>&gt;</span></span><br><span class="line">	app会显示</span><br><span class="line"><span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- #endif --&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="api的条件注释"><a href="#api的条件注释" class="headerlink" title="api的条件注释"></a>api的条件注释</h4><p>代码演示</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">onLoad () &#123;</span><br><span class="line">	<span class="comment">//#ifdef MP-WEIXIN</span></span><br><span class="line">	<span class="built_in">console</span>.log(<span class="string">&#x27;微信小程序&#x27;</span>)</span><br><span class="line">	<span class="comment">//#endif</span></span><br><span class="line">	<span class="comment">//#ifdef H5</span></span><br><span class="line">	<span class="built_in">console</span>.log(<span class="string">&#x27;h5页面&#x27;</span>)</span><br><span class="line">	<span class="comment">//#endif</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>样式的条件注释</p>
+<p>代码演示</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* #ifdef H5 */</span></span><br><span class="line">	<span class="selector-tag">view</span>&#123;</span><br><span class="line">		<span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">		<span class="attribute">line-height</span>: <span class="number">100px</span>;</span><br><span class="line">		<span class="attribute">background</span>: red;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">/* #endif */</span></span><br><span class="line">	<span class="comment">/* #ifdef MP-WEIXIN */</span></span><br><span class="line">	<span class="selector-tag">view</span>&#123;</span><br><span class="line">		<span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">		<span class="attribute">line-height</span>: <span class="number">100px</span>;</span><br><span class="line">		<span class="attribute">background</span>: green;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">/* #endif */</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="uni-app-中的导航跳转"><a href="#uni-app-中的导航跳转" class="headerlink" title="uni-app 中的导航跳转"></a>uni-app 中的导航跳转</h3><h4 id="利用-navigator-进行跳转"><a href="#利用-navigator-进行跳转" class="headerlink" title="利用 navigator 进行跳转"></a>利用 navigator 进行跳转</h4><p>navigator详细文档：<a target="_blank" rel="noopener" href="https://uniapp.dcloud.io/component/navigator">文档地址</a></p>
+<p>跳转到普通页面</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">navigator</span> <span class="attr">url</span>=<span class="string">&quot;/pages/about/about&quot;</span> <span class="attr">hover-class</span>=<span class="string">&quot;navigator-hover&quot;</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">&quot;default&quot;</span>&gt;</span>跳转到关于页面<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">navigator</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>跳转到tabbar页面</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">navigator</span> <span class="attr">url</span>=<span class="string">&quot;/pages/message/message&quot;</span> <span class="attr">open-type</span>=<span class="string">&quot;switchTab&quot;</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">&quot;default&quot;</span>&gt;</span>跳转到message页面<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">navigator</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="利用编程式导航进行跳转"><a href="#利用编程式导航进行跳转" class="headerlink" title="利用编程式导航进行跳转"></a>利用编程式导航进行跳转</h4><p><a href="%5Buni.navigateTo%5D(https://uniapp.dcloud.io/api/router?id=navigateto)">导航跳转文档</a></p>
+<p><strong>利用navigateTo进行导航跳转</strong></p>
+<p>保留当前页面，跳转到应用内的某个页面，使用<code>uni.navigateBack</code>可以返回到原页面。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">&quot;primary&quot;</span> @<span class="attr">click</span>=<span class="string">&quot;goAbout&quot;</span>&gt;</span>跳转到关于页面<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>通过navigateTo方法进行跳转到普通页面</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">goAbout () &#123;</span><br><span class="line">	uni.navigateTo(&#123;</span><br><span class="line">		url: <span class="string">&#x27;/pages/about/about&#x27;</span>,</span><br><span class="line">	&#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>通过switchTab跳转到tabbar页面</strong></p>
+<p>跳转到tabbar页面</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">&quot;primary&quot;</span> @<span class="attr">click</span>=<span class="string">&quot;goMessage&quot;</span>&gt;</span>跳转到message页面<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>通过switchTab方法进行跳转</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">goMessage () &#123;</span><br><span class="line">	uni.switchTab(&#123;</span><br><span class="line">		url: <span class="string">&#x27;/pages/message/message&#x27;</span></span><br><span class="line">	&#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>redirectTo进行跳转</strong> </p>
+<p>关闭当前页面，跳转到应用内的某个页面。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- template --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">&quot;primary&quot;</span> @<span class="attr">click</span>=<span class="string">&quot;goMessage&quot;</span>&gt;</span>跳转到message页面<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- js --&gt;</span></span><br><span class="line">goMessage () &#123;</span><br><span class="line">	uni.switchTab(&#123;</span><br><span class="line">		url: &#x27;/pages/message/message&#x27;</span><br><span class="line">	&#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>通过onUnload测试当前组件确实卸载</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">onUnload () &#123;</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="string">&#x27;组件卸载了&#x27;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="导航跳转传递参数"><a href="#导航跳转传递参数" class="headerlink" title="导航跳转传递参数"></a>导航跳转传递参数</h4><p>在导航进行跳转到下一个页面的同时，可以给下一个页面传递相应的参数，接收参数的页面可以通过onLoad生命周期进行接收</p>
+<p>传递参数的页面</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">goAbout () &#123;</span><br><span class="line">	uni.navigateTo(&#123;</span><br><span class="line">		url: <span class="string">&#x27;/pages/about/about?id=80&#x27;</span>,</span><br><span class="line">	&#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>接收参数的页面</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">	<span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">		onLoad (options) &#123;</span><br><span class="line">			<span class="built_in">console</span>.log(options)</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="uni-app-中组件"><a href="#uni-app-中组件" class="headerlink" title="uni-app 中组件"></a>uni-app 中组件</h3><h4 id="uni-app中组件的创建"><a href="#uni-app中组件的创建" class="headerlink" title="uni-app中组件的创建"></a>uni-app中组件的创建</h4><p>在uni-app中，可以通过创建一个后缀名为vue的文件，即创建一个组件成功，其他组件可以将该组件通过impot的方式导入，在通过components进行注册即可</p>
+<ul>
+<li>创建login组件，在component中创建login目录，然后新建login.vue文件</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">	&lt;view&gt;</span><br><span class="line">		这是一个自定义组件</span><br><span class="line">	&lt;&#x2F;view&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">&lt;&#x2F;script&gt;</span><br><span class="line"></span><br><span class="line">&lt;style&gt;</span><br><span class="line">&lt;&#x2F;style&gt;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>在其他组件中导入该组件并注册</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">	&lt;test&gt;&lt;&#x2F;test&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">		import login from &quot;@&#x2F;components&#x2F;test&#x2F;test.vue&quot;</span><br><span class="line"> 	components: &#123;test&#125;</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
+
+<h4 id="组件的生命周期函数"><a href="#组件的生命周期函数" class="headerlink" title="组件的生命周期函数"></a>组件的生命周期函数</h4><table>
+<thead>
+<tr>
+<th>beforeCreate</th>
+<th>在实例初始化之后被调用。<a target="_blank" rel="noopener" href="https://cn.vuejs.org/v2/api/#beforeCreate">详见</a></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>created</td>
+<td>在实例创建完成后被立即调用。<a target="_blank" rel="noopener" href="https://cn.vuejs.org/v2/api/#created">详见</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>beforeMount</td>
+<td>在挂载开始之前被调用。<a target="_blank" rel="noopener" href="https://cn.vuejs.org/v2/api/#beforeMount">详见</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>mounted</td>
+<td>挂载到实例上去之后调用。<a target="_blank" rel="noopener" href="https://cn.vuejs.org/v2/api/#mounted">详见</a> 注意：此处并不能确定子组件被全部挂载，如果需要子组件完全挂载之后在执行操作可以使用<code>$nextTick</code><a target="_blank" rel="noopener" href="https://cn.vuejs.org/v2/api/#Vue-nextTick">Vue官方文档</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>beforeUpdate</td>
+<td>数据更新时调用，发生在虚拟 DOM 打补丁之前。<a target="_blank" rel="noopener" href="https://cn.vuejs.org/v2/api/#beforeUpdate">详见</a></td>
+<td>仅H5平台支持</td>
+<td></td>
+</tr>
+<tr>
+<td>updated</td>
+<td>由于数据更改导致的虚拟 DOM 重新渲染和打补丁，在这之后会调用该钩子。<a target="_blank" rel="noopener" href="https://cn.vuejs.org/v2/api/#updated">详见</a></td>
+<td>仅H5平台支持</td>
+<td></td>
+</tr>
+<tr>
+<td>beforeDestroy</td>
+<td>实例销毁之前调用。在这一步，实例仍然完全可用。<a target="_blank" rel="noopener" href="https://cn.vuejs.org/v2/api/#beforeDestroy">详见</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>destroyed</td>
+<td>Vue 实例销毁后调用。调用后，Vue 实例指示的所有东西都会解绑定，所有的事件监听器会被移除，所有的子实例也会被销毁。<a target="_blank" rel="noopener" href="https://cn.vuejs.org/v2/api/#destroyed">详见</a></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h4 id="组件的通讯"><a href="#组件的通讯" class="headerlink" title="组件的通讯"></a>组件的通讯</h4><h5 id="父组件给子组件传值"><a href="#父组件给子组件传值" class="headerlink" title="父组件给子组件传值"></a>父组件给子组件传值</h5><p>通过props来接受外界传递到组件内部的值</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">	&lt;view&gt;</span><br><span class="line">		这是一个自定义组件 &#123;&#123;msg&#125;&#125;</span><br><span class="line">	&lt;&#x2F;view&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">	export default &#123;</span><br><span class="line">		props: [&#39;msg&#39;]</span><br><span class="line">	&#125;</span><br><span class="line">&lt;&#x2F;script&gt;</span><br><span class="line">&lt;style&gt;</span><br><span class="line">&lt;&#x2F;style&gt;</span><br></pre></td></tr></table></figure>
+
+<p>其他组件在使用login组件的时候传递值</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">	&lt;view&gt;</span><br><span class="line">		&lt;test :msg&#x3D;&quot;msg&quot;&gt;&lt;&#x2F;test&gt;</span><br><span class="line">	&lt;&#x2F;view&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">	import test from &quot;@&#x2F;components&#x2F;test&#x2F;test.vue&quot;</span><br><span class="line">	export default &#123;</span><br><span class="line">		data () &#123;</span><br><span class="line">			return &#123;</span><br><span class="line">				msg: &#39;hello&#39;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;,</span><br><span class="line">		</span><br><span class="line">		components: &#123;test&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
+
+<h5 id="子组件给父组件传值"><a href="#子组件给父组件传值" class="headerlink" title="子组件给父组件传值"></a>子组件给父组件传值</h5><p>通过$emit触发事件进行传递参数</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">	&lt;view&gt;</span><br><span class="line">		这是一个自定义组件 &#123;&#123;msg&#125;&#125;</span><br><span class="line">		&lt;button type&#x3D;&quot;primary&quot; @click&#x3D;&quot;sendMsg&quot;&gt;给父组件传值&lt;&#x2F;button&gt;</span><br><span class="line">	&lt;&#x2F;view&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">	export default &#123;</span><br><span class="line">		data () &#123;</span><br><span class="line">			return &#123;</span><br><span class="line">				status: &#39;打篮球&#39;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;,</span><br><span class="line">		props: &#123;</span><br><span class="line">			msg: &#123;</span><br><span class="line">				type: String,</span><br><span class="line">				value: &#39;&#39;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;,</span><br><span class="line">		methods: &#123;</span><br><span class="line">			sendMsg () &#123;</span><br><span class="line">				this.$emit(&#39;myEvent&#39;,this.status)</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
+
+<p>父组件定义自定义事件并接收参数</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">view</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">test</span> <span class="attr">:msg</span>=<span class="string">&quot;msg&quot;</span> @<span class="attr">myEvent</span>=<span class="string">&quot;getMsg&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">test</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">	<span class="keyword">import</span> test <span class="keyword">from</span> <span class="string">&quot;@/components/test/test.vue&quot;</span></span></span><br><span class="line"><span class="javascript">	<span class="keyword">export</span> <span class="keyword">default</span> &#123;</span></span><br><span class="line">		data () &#123;</span><br><span class="line"><span class="javascript">			<span class="keyword">return</span> &#123;</span></span><br><span class="line"><span class="javascript">				msg: <span class="string">&#x27;hello&#x27;</span></span></span><br><span class="line">			&#125;</span><br><span class="line">		&#125;,</span><br><span class="line">		methods: &#123;</span><br><span class="line">			getMsg (res) &#123;</span><br><span class="line"><span class="javascript">				<span class="built_in">console</span>.log(res)</span></span><br><span class="line">			&#125;</span><br><span class="line">		&#125;,</span><br><span class="line">		</span><br><span class="line">		components: &#123;test&#125;</span><br><span class="line">	&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="兄弟组件通讯"><a href="#兄弟组件通讯" class="headerlink" title="兄弟组件通讯"></a>兄弟组件通讯</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  &#x2F;&#x2F; 触发全局自定义事件 </span><br><span class="line">	uni.$emit(eventName,OBJECT);</span><br><span class="line">	&#x2F;&#x2F; 监听全局自定义事件</span><br><span class="line">	uni.$on(eventName,callback)</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
+
+<p>注意及时销毁事件监听</p>
+<h4 id="uni-ui的使用"><a href="#uni-ui的使用" class="headerlink" title="uni-ui的使用"></a>uni-ui的使用</h4><hr>
+<p>以上是我对下列视频及文章的归纳和总结。<br><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1BJ411W7pX">Uni-App从入门到实战</a> P23<br><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1JE411r7B5?p=1">2020uniApp视频全套资料配源码</a></p>
+<hr>
+<p>相关资料<br><a target="_blank" rel="noopener" href="https://uniapp.dcloud.io/quickstart?id=%E8%BF%90%E8%A1%8Cuni-app">运行uni-app</a><br><a target="_blank" rel="noopener" href="https://juejin.im/post/5d48eac9518825403769d9ad#heading-25">uni-app的开发经历（持续更新）</a><br><a target="_blank" rel="noopener" href="https://juejin.im/post/5dcb77e9f265da4d260447c8">uni-app小程序手把手项目实战</a><br><a target="_blank" rel="noopener" href="https://juejin.im/post/5dc1ab8451882509be3ee2dc">uni-app消息推送方案</a><br><a target="_blank" rel="noopener" href="https://juejin.im/post/5c2dc4aef265da612c5e02d7">uni-app 1.4 发布，一套代码，发行小程序（微信/支付宝/百度）、H5、App多个平台</a><br><a target="_blank" rel="noopener" href="https://juejin.im/post/5e43b2645188254902765766">uni-app踩坑+小改造</a><br><a target="_blank" rel="noopener" href="http://ua-doc.silianpan.cn/">uniapp-admin</a><br><a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000020918807">uni-app消息推送方案</a></p>
+</div><div class="article-licensing box"><div class="licensing-title"><p>uniapp 从入门到实战</p><p><a href="http://example.com/2020/06/29/Blog-about-learning-115/">http://example.com/2020/06/29/Blog-about-learning-115/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>作者</h6><p>Fallen-down</p></div></div><div class="level-item is-narrow"><div><h6>发布于</h6><p>2020-06-29</p></div></div><div class="level-item is-narrow"><div><h6>更新于</h6><p>2020-10-13</p></div></div><div class="level-item is-narrow"><div><h6>许可协议</h6><p><a class="icon" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a><a class="icon" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a><a class="icon" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><div class="article-tags is-size-7 mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/tags/article/">article</a><a class="link-muted mr-2" rel="tag" href="/tags/uniapp/">uniapp</a></div><div class="notification is-danger">You need to set <code>install_url</code> to use ShareThis. Please set it in <code>_config.yml</code>.</div></article></div><div class="card"><div class="card-content"><h3 class="menu-label has-text-centered">喜欢这篇文章？打赏一下作者吧</h3><div class="buttons is-centered"><a class="button donate" href="/" target="_blank" rel="noopener" data-type="afdian"><span class="icon is-small"><i class="fas fa-charging-station"></i></span><span>爱发电</span></a><a class="button donate" data-type="alipay"><span class="icon is-small"><i class="fab fa-alipay"></i></span><span>支付宝</span><span class="qrcode"><img src="/" alt="支付宝"></span></a><a class="button donate" href="/" target="_blank" rel="noopener" data-type="buymeacoffee"><span class="icon is-small"><i class="fas fa-coffee"></i></span><span>送我杯咖啡</span></a><a class="button donate" href="/" target="_blank" rel="noopener" data-type="patreon"><span class="icon is-small"><i class="fab fa-patreon"></i></span><span>Patreon</span></a><div class="notification is-danger">You forgot to set the <code>business</code> or <code>currency_code</code> for Paypal. Please set it in <code>_config.yml</code>.</div><a class="button donate" data-type="wechat"><span class="icon is-small"><i class="fab fa-weixin"></i></span><span>微信</span><span class="qrcode"><img src="/" alt="微信"></span></a></div></div></div><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/2020/06/29/Blog-about-learning-116/"><i class="level-item fas fa-chevron-left"></i><span class="level-item">Nuxt 从入门到实践</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/2020/06/29/Blog-about-learning-114/"><span class="level-item"> </span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">评论</h3><div class="notification is-danger">You forgot to set the <code>shortname</code> for Disqus. Please set it in <code>_config.yml</code>.</div></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-3-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar" src="/img/avatar.png" alt="Fallen-down"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">Fallen-down</p><p class="is-size-6 is-block">Web Developer</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>China,Beijing</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/archives"><p class="title">221</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/categories"><p class="title">45</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/tags"><p class="title">194</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/ppoffice" target="_blank" rel="noopener">关注我</a></div><div class="level is-mobile"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/ppoffice"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Facebook" href="https://facebook.com"><i class="fab fa-facebook"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Twitter" href="https://twitter.com"><i class="fab fa-twitter"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Dribbble" href="https://dribbble.com"><i class="fab fa-dribbble"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="RSS" href="/"><i class="fas fa-rss"></i></a></div></div></div><!--!--><div class="card widget" data-type="links"><div class="card-content"><div class="menu"><h3 class="menu-label">链接</h3><ul class="menu-list"><li><a class="level is-mobile" href="https://hexo.io" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Hexo</span></span><span class="level-right"><span class="level-item tag">hexo.io</span></span></a></li><li><a class="level is-mobile" href="https://bulma.io" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Bulma</span></span><span class="level-right"><span class="level-item tag">bulma.io</span></span></a></li></ul></div></div></div><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">分类</h3><ul class="menu-list"><li><a class="level is-mobile" href="/categories/Blog/"><span class="level-start"><span class="level-item">Blog</span></span><span class="level-end"><span class="level-item tag">1</span></span></a><ul><li><a class="level is-mobile" href="/categories/Blog/article/"><span class="level-start"><span class="level-item">article</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></li><li><a class="level is-mobile" href="/categories/industry/"><span class="level-start"><span class="level-item">industry</span></span><span class="level-end"><span class="level-item tag">8</span></span></a><ul><li><a class="level is-mobile" href="/categories/industry/News/"><span class="level-start"><span class="level-item">News</span></span><span class="level-end"><span class="level-item tag">8</span></span></a></li></ul></li><li><a class="level is-mobile" href="/categories/learning/"><span class="level-start"><span class="level-item">learning</span></span><span class="level-end"><span class="level-item tag">116</span></span></a><ul><li><a class="level is-mobile" href="/categories/learning/CSS/"><span class="level-start"><span class="level-item">CSS</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/categories/learning/GitHub/"><span class="level-start"><span class="level-item">GitHub</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/categories/learning/HTML-CSS/"><span class="level-start"><span class="level-item">HTML&amp;&amp;CSS</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li><li><a class="level is-mobile" href="/categories/learning/Hybrid/"><span class="level-start"><span class="level-item">Hybrid</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/learning/Hybrid-App/"><span class="level-start"><span class="level-item">Hybrid App</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li><li><a class="level is-mobile" href="/categories/learning/JS-%E5%BA%93/"><span class="level-start"><span class="level-item">JS 库</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/learning/JS-%E6%A1%86%E6%9E%B6/"><span class="level-start"><span class="level-item">JS 框架</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li><li><a class="level is-mobile" href="/categories/learning/JavaScript/"><span class="level-start"><span class="level-item">JavaScript</span></span><span class="level-end"><span class="level-item tag">28</span></span></a></li><li><a class="level is-mobile" href="/categories/learning/Node/"><span class="level-start"><span class="level-item">Node</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li><li><a class="level is-mobile" href="/categories/learning/PHP/"><span class="level-start"><span class="level-item">PHP</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li><li><a class="level is-mobile" href="/categories/learning/UI-%E6%A1%86%E6%9E%B6/"><span class="level-start"><span class="level-item">UI 框架</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/categories/learning/Vue/"><span class="level-start"><span class="level-item">Vue</span></span><span class="level-end"><span class="level-item tag">6</span></span></a></li><li><a class="level is-mobile" href="/categories/learning/Web/"><span class="level-start"><span class="level-item">Web</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li><li><a class="level is-mobile" href="/categories/learning/jQuery/"><span class="level-start"><span class="level-item">jQuery</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/learning/react/"><span class="level-start"><span class="level-item">react</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/learning/%E5%85%B6%E4%BB%96/"><span class="level-start"><span class="level-item">其他</span></span><span class="level-end"><span class="level-item tag">8</span></span></a></li><li><a class="level is-mobile" href="/categories/learning/%E5%89%8D%E7%AB%AF%E4%BC%98%E5%8C%96/"><span class="level-start"><span class="level-item">前端优化</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/learning/%E5%90%8E%E7%AB%AF/"><span class="level-start"><span class="level-item">后端</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/categories/learning/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"><span class="level-start"><span class="level-item">小程序</span></span><span class="level-end"><span class="level-item tag">9</span></span></a></li><li><a class="level is-mobile" href="/categories/learning/%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86/"><span class="level-start"><span class="level-item">版本管理</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/categories/learning/%E7%A7%BB%E5%8A%A8%E7%AB%AF/"><span class="level-start"><span class="level-item">移动端</span></span><span class="level-end"><span class="level-item tag">12</span></span></a></li><li><a class="level is-mobile" href="/categories/learning/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"><span class="level-start"><span class="level-item">设计模式</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/learning/%E8%B0%83%E8%AF%95/"><span class="level-start"><span class="level-item">调试</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/learning/%E9%9D%A2%E8%AF%95/"><span class="level-start"><span class="level-item">面试</span></span><span class="level-end"><span class="level-item tag">7</span></span></a></li></ul></li><li><a class="level is-mobile" href="/categories/utils/"><span class="level-start"><span class="level-item">utils</span></span><span class="level-end"><span class="level-item tag">8</span></span></a><ul><li><a class="level is-mobile" href="/categories/utils/API/"><span class="level-start"><span class="level-item">API</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/utils/utils/"><span class="level-start"><span class="level-item">utils</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/utils/web/"><span class="level-start"><span class="level-item">web</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/categories/utils/%E6%B5%8B%E8%AF%95/"><span class="level-start"><span class="level-item">测试</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></li><li><a class="level is-mobile" href="/categories/vlog/"><span class="level-start"><span class="level-item">vlog</span></span><span class="level-end"><span class="level-item tag">25</span></span></a><ul><li><a class="level is-mobile" href="/categories/vlog/artcle/"><span class="level-start"><span class="level-item">artcle</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/vlog/article/"><span class="level-start"><span class="level-item">article</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/categories/vlog/movie/"><span class="level-start"><span class="level-item">movie</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/vlog/music/"><span class="level-start"><span class="level-item">music</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/vlog/prepare/"><span class="level-start"><span class="level-item">prepare</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/vlog/utils/"><span class="level-start"><span class="level-item">utils</span></span><span class="level-end"><span class="level-item tag">5</span></span></a></li><li><a class="level is-mobile" href="/categories/vlog/%E5%81%A5%E8%BA%AB/"><span class="level-start"><span class="level-item">健身</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/vlog/%E5%85%B6%E4%BB%96/"><span class="level-start"><span class="level-item">其他</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/categories/vlog/%E8%AF%BB%E4%B9%A6/"><span class="level-start"><span class="level-item">读书</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li><li><a class="level is-mobile" href="/categories/vlog/%E8%AF%BE%E7%A8%8B/"><span class="level-start"><span class="level-item">课程</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li></ul></li></ul></div></div></div><div class="card widget" data-type="archives"><div class="card-content"><div class="menu"><h3 class="menu-label">归档</h3><ul class="menu-list"><li><a class="level is-mobile" href="/archives/2026/10/"><span class="level-start"><span class="level-item">十月 2026</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2020/12/"><span class="level-start"><span class="level-item">十二月 2020</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li><li><a class="level is-mobile" href="/archives/2020/11/"><span class="level-start"><span class="level-item">十一月 2020</span></span><span class="level-end"><span class="level-item tag">5</span></span></a></li><li><a class="level is-mobile" href="/archives/2020/10/"><span class="level-start"><span class="level-item">十月 2020</span></span><span class="level-end"><span class="level-item tag">13</span></span></a></li><li><a class="level is-mobile" href="/archives/2020/09/"><span class="level-start"><span class="level-item">九月 2020</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2020/08/"><span class="level-start"><span class="level-item">八月 2020</span></span><span class="level-end"><span class="level-item tag">25</span></span></a></li><li><a class="level is-mobile" href="/archives/2020/07/"><span class="level-start"><span class="level-item">七月 2020</span></span><span class="level-end"><span class="level-item tag">5</span></span></a></li><li><a class="level is-mobile" href="/archives/2020/06/"><span class="level-start"><span class="level-item">六月 2020</span></span><span class="level-end"><span class="level-item tag">34</span></span></a></li><li><a class="level is-mobile" href="/archives/2020/05/"><span class="level-start"><span class="level-item">五月 2020</span></span><span class="level-end"><span class="level-item tag">19</span></span></a></li><li><a class="level is-mobile" href="/archives/2020/04/"><span class="level-start"><span class="level-item">四月 2020</span></span><span class="level-end"><span class="level-item tag">33</span></span></a></li><li><a class="level is-mobile" href="/archives/2020/03/"><span class="level-start"><span class="level-item">三月 2020</span></span><span class="level-end"><span class="level-item tag">25</span></span></a></li><li><a class="level is-mobile" href="/archives/2020/02/"><span class="level-start"><span class="level-item">二月 2020</span></span><span class="level-end"><span class="level-item tag">20</span></span></a></li><li><a class="level is-mobile" href="/archives/2020/01/"><span class="level-start"><span class="level-item">一月 2020</span></span><span class="level-end"><span class="level-item tag">20</span></span></a></li><li><a class="level is-mobile" href="/archives/2019/12/"><span class="level-start"><span class="level-item">十二月 2019</span></span><span class="level-end"><span class="level-item tag">16</span></span></a></li></ul></div></div></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">标签</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/API/"><span class="tag">API</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Ajax/"><span class="tag">Ajax</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Android/"><span class="tag">Android</span><span class="tag">6</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Android-Studio/"><span class="tag">Android Studio</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Angular/"><span class="tag">Angular</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/App/"><span class="tag">App</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Babel/"><span class="tag">Babel</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/BrowserSync/"><span class="tag">BrowserSync</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/C/"><span class="tag">C#</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/C/"><span class="tag">C++</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/CSS/"><span class="tag">CSS</span><span class="tag">5</span></a></div><div class="control"><a class="tags has-addons" href="/tags/CSS-%E5%BA%93/"><span class="tag">CSS 库</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/CentOS/"><span class="tag">CentOS</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Chrome/"><span class="tag">Chrome</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Cordova/"><span class="tag">Cordova</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/DOM/"><span class="tag">DOM</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Discuz/"><span class="tag">Discuz</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/ES6/"><span class="tag">ES6</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/ES8/"><span class="tag">ES8</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Egg/"><span class="tag">Egg</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Electron/"><span class="tag">Electron</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Git/"><span class="tag">Git</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/GitHub/"><span class="tag">GitHub</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/GitLab/"><span class="tag">GitLab</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Gitblit/"><span class="tag">Gitblit</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Github/"><span class="tag">Github</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Gulp/"><span class="tag">Gulp</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/H5/"><span class="tag">H5</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/HTML/"><span class="tag">HTML</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/HTML5-Specification/"><span class="tag">HTML5 + Specification</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/HTTP/"><span class="tag">HTTP</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Hybrid/"><span class="tag">Hybrid</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Hybrid-App/"><span class="tag">Hybrid App</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/IndexedDB/"><span class="tag">IndexedDB</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Ionic/"><span class="tag">Ionic</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/JS-%E5%BA%93/"><span class="tag">JS 库</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/JSDoc/"><span class="tag">JSDoc</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/JSON/"><span class="tag">JSON</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Java/"><span class="tag">Java</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/JavaScript/"><span class="tag">JavaScript</span><span class="tag">15</span></a></div><div class="control"><a class="tags has-addons" href="/tags/JavaScript-%E5%BA%93/"><span class="tag">JavaScript 库</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/JavaScript-%E6%8A%80%E5%B7%A7/"><span class="tag">JavaScript 技巧</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Koa2/"><span class="tag">Koa2</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/MUI/"><span class="tag">MUI</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Mysql/"><span class="tag">Mysql</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/NativeScript/"><span class="tag">NativeScript</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Nginx/"><span class="tag">Nginx</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Node/"><span class="tag">Node</span><span class="tag">6</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Nuxt/"><span class="tag">Nuxt</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/PHP/"><span class="tag">PHP</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/PWA/"><span class="tag">PWA</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Promise/"><span class="tag">Promise</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/React/"><span class="tag">React</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/React-Native/"><span class="tag">React Native</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/SSR/"><span class="tag">SSR</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/SVN/"><span class="tag">SVN</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Serverless/"><span class="tag">Serverless</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Session/"><span class="tag">Session</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Tensorflow-js/"><span class="tag">Tensorflow.js</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Uint8Array/"><span class="tag">Uint8Array</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/VSCode-%E6%8F%92%E4%BB%B6/"><span class="tag">VSCode 插件</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Vant/"><span class="tag">Vant</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Vue/"><span class="tag">Vue</span><span class="tag">12</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Vue-CLI/"><span class="tag">Vue CLI</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Vue-Cli/"><span class="tag">Vue Cli</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Vue-Router/"><span class="tag">Vue Router</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Vue-js/"><span class="tag">Vue.js</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Vuex/"><span class="tag">Vuex</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Web/"><span class="tag">Web</span><span class="tag">8</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Web-SQL/"><span class="tag">Web SQL</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/WebSocket/"><span class="tag">WebSocket</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Webpack/"><span class="tag">Webpack</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Weex/"><span class="tag">Weex</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/WordPress/"><span class="tag">WordPress</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/article/"><span class="tag">article</span><span class="tag">66</span></a></div><div class="control"><a class="tags has-addons" href="/tags/book/"><span class="tag">book</span><span class="tag">13</span></a></div><div class="control"><a class="tags has-addons" href="/tags/canvas/"><span class="tag">canvas</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/cookie/"><span class="tag">cookie</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/eslint/"><span class="tag">eslint</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/fetch/"><span class="tag">fetch</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/git/"><span class="tag">git</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/github/"><span class="tag">github</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/hexo/"><span class="tag">hexo</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/http-server/"><span class="tag">http-server</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/iOS/"><span class="tag">iOS</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/if-else/"><span class="tag">if-else</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/jQuery/"><span class="tag">jQuery</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/job/"><span class="tag">job</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/json-server/"><span class="tag">json-server</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/learning/"><span class="tag">learning</span><span class="tag">57</span></a></div><div class="control"><a class="tags has-addons" href="/tags/liveReload/"><span class="tag">liveReload</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/liveStyle/"><span class="tag">liveStyle</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/localStorage/"><span class="tag">localStorage</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/meteor/"><span class="tag">meteor</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/mork/"><span class="tag">mork</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/music/"><span class="tag">music</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/nuxt-js/"><span class="tag">nuxt.js</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/phpstudy/"><span class="tag">phpstudy</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/prepare/"><span class="tag">prepare</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/promise/"><span class="tag">promise</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/python/"><span class="tag">python</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/qiankun/"><span class="tag">qiankun</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/react/"><span class="tag">react</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/realworld/"><span class="tag">realworld</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/serve/"><span class="tag">serve</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/socketio/"><span class="tag">socketio</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/specialty/"><span class="tag">specialty</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/summary/"><span class="tag">summary</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/target/"><span class="tag">target</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/token/"><span class="tag">token</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/umi/"><span class="tag">umi</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/uni-app/"><span class="tag">uni-app</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/uniCloud/"><span class="tag">uniCloud</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/uniapp/"><span class="tag">uniapp</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/utils/"><span class="tag">utils</span><span class="tag">11</span></a></div><div class="control"><a class="tags has-addons" href="/tags/vlog/"><span class="tag">vlog</span><span class="tag">23</span></a></div><div class="control"><a class="tags has-addons" href="/tags/vscode-%E6%89%A9%E5%B1%95/"><span class="tag">vscode 扩展</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/vue/"><span class="tag">vue</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/web/"><span class="tag">web</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/work/"><span class="tag">work</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E4%B8%93%E6%A0%8F/"><span class="tag">专栏</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E4%BA%91%E5%BC%80%E5%8F%91/"><span class="tag">云开发</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E4%BB%A3%E7%A0%81%E5%AE%A1%E6%9F%A5/"><span class="tag">代码审查</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E4%BB%A3%E7%A0%81%E5%BA%93/"><span class="tag">代码库</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%85%8D%E8%B4%B9%E8%A7%86%E9%A2%91%E6%95%99%E7%A8%8B/"><span class="tag">免费视频教程</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%85%A5%E9%97%A8/"><span class="tag">入门</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%85%AC%E5%BC%80%E8%AF%BE/"><span class="tag">公开课</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%87%BD%E6%95%B0/"><span class="tag">函数</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%88%9B%E4%B8%9A/"><span class="tag">创业</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%89%8D%E7%AB%AF/"><span class="tag">前端</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF/"><span class="tag">前端学习路线</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%8D%95%E4%BD%8D/"><span class="tag">单位</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%8F%8D%E7%BC%96%E8%AF%91/"><span class="tag">反编译</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%8F%91%E5%B8%83-%E8%AE%A2%E9%98%85%E6%A8%A1%E5%BC%8F/"><span class="tag">发布-订阅模式</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%8F%AF%E8%A7%86%E5%8C%96/"><span class="tag">可视化</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%9B%9A%E5%BE%92%E5%81%A5%E8%BA%AB/"><span class="tag">囚徒健身</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%9B%A2%E9%98%9F/"><span class="tag">团队</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%9B%BE%E6%A0%87/"><span class="tag">图标</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%9B%BE%E7%89%87%E6%A0%BC%E5%BC%8F/"><span class="tag">图片格式</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%9B%BE%E8%A1%A8%E5%BA%93/"><span class="tag">图表库</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%9B%BE%E8%B0%B1/"><span class="tag">图谱</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%A4%A7%E5%B1%8F/"><span class="tag">大屏</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%AD%A6%E4%B9%A0%E5%B7%A5%E5%85%B7/"><span class="tag">学习工具</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%AD%A6%E4%B9%A0%E6%8A%80%E5%B7%A7/"><span class="tag">学习技巧</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95/"><span class="tag">学习方法</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"><span class="tag">小程序</span><span class="tag">14</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%B7%A5%E4%BD%9C%E7%8E%AF%E5%A2%83/"><span class="tag">工作环境</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%BC%80%E5%8F%91%E8%80%85/"><span class="tag">开发者</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/"><span class="tag">开源项目</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/"><span class="tag">微信小程序</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%BE%AE%E5%89%8D%E7%AB%AF/"><span class="tag">微前端</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%BF%83%E6%80%81/"><span class="tag">心态</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%BF%AB%E5%BA%94%E7%94%A8/"><span class="tag">快应用</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%80%A7/"><span class="tag">性</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%85%95%E8%AF%BE%E7%BD%91/"><span class="tag">慕课网</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%88%90%E9%95%BF/"><span class="tag">成长</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%8A%80%E5%B7%A7/"><span class="tag">技巧</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%8E%A5%E5%8F%A3/"><span class="tag">接口</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%8F%92%E4%BB%B6/"><span class="tag">插件</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"><span class="tag">数据分析</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"><span class="tag">数据库</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%96%87%E4%BB%B6%E9%A2%84%E8%A7%88/"><span class="tag">文件预览</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%A1%8C%E9%9D%A2/"><span class="tag">桌面</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%B3%A8%E9%87%8A/"><span class="tag">注释</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%B5%8B%E8%AF%95/"><span class="tag">测试</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%B5%8B%E8%AF%95%E6%A1%86%E6%9E%B6/"><span class="tag">测试框架</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%88%AC%E8%99%AB/"><span class="tag">爬虫</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%90%86%E8%B4%A2/"><span class="tag">理财</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%9B%B4%E6%92%AD/"><span class="tag">直播</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%9B%B4%E6%92%AD%E5%85%AC%E5%BC%80%E8%AF%BE/"><span class="tag">直播公开课</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%9B%B4%E6%92%AD%E8%AF%BE/"><span class="tag">直播课</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%A0%81%E4%BA%91/"><span class="tag">码云</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%A7%81%E6%B4%BB/"><span class="tag">私活</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/"><span class="tag">科学上网</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%B2%BE%E5%8D%8E/"><span class="tag">精华</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%BB%84%E4%BB%B6%E5%B0%81%E8%A3%85/"><span class="tag">组件封装</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%BD%91%E7%AB%99/"><span class="tag">网站</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%BD%91%E7%BB%9C/"><span class="tag">网络</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E8%81%8C%E4%B8%9A/"><span class="tag">职业</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E8%82%8C%E8%82%89%E5%AE%8C%E5%85%A8%E8%AE%AD%E7%BB%83%E8%AE%A1%E5%88%92/"><span class="tag">肌肉完全训练计划</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E8%85%BE%E8%AE%AF%E4%BA%91/"><span class="tag">腾讯云</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E8%85%BE%E8%AE%AF%E4%BA%91%E5%A4%A7%E5%AD%A6/"><span class="tag">腾讯云大学</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E8%8A%82%E6%B5%81/"><span class="tag">节流</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/"><span class="tag">观察者模式</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E8%AF%B7%E6%B1%82%E7%BC%93%E5%AD%98/"><span class="tag">请求缓存</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E8%B7%A8%E5%9F%9F/"><span class="tag">跨域</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E8%BD%AF%E4%BB%B6/"><span class="tag">软件</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E8%BF%87%E6%BB%A4%E5%99%A8/"><span class="tag">过滤器</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E9%80%82%E9%85%8D/"><span class="tag">适配</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E9%98%B2%E6%8A%96/"><span class="tag">防抖</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E9%9D%A2%E8%AF%95/"><span class="tag">面试</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E9%9D%A2%E8%AF%95%E9%A2%98/"><span class="tag">面试题</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E9%A1%B9%E7%9B%AE/"><span class="tag">项目</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2/"><span class="tag">项目部署</span><span class="tag">1</span></a></div></div></div></div></div><div class="card widget" data-type="subscribe-email"><div class="card-content"><div class="menu"><h3 class="menu-label">订阅更新</h3><form action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open(&#039;https://feedburner.google.com/fb/a/mailverify?uri=&#039;,&#039;popupwindow&#039;,&#039;scrollbars=yes,width=550,height=520&#039;);return true"><input type="hidden" value="" name="uri"><input type="hidden" name="loc" value="en_US"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button" type="submit" value="订阅"></div></div></form></div></div></div><div class="card widget"><div class="card-content"><div class="notification is-danger">You need to set <code>client_id</code> and <code>slot_id</code> to show this AD unit. Please set it in <code>_config.yml</code>.</div></div></div><div class="column-right-shadow is-hidden-widescreen"></div></div><div class="column column-right is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only order-3"><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">最新文章</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2026-10-12T13:30:09.000Z">2026-10-12</time></p><p class="title"><a href="/2026/10/12/Sticky-content/">置顶内容</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2020-12-05T08:53:41.419Z">2020-12-05</time></p><p class="title"><a href="/2020/12/05/Interview-Question8/">面试 从面试到面壁 Vue 篇</a></p><p class="categories"><a href="/categories/learning/">learning</a> / <a href="/categories/learning/%E9%9D%A2%E8%AF%95/">面试</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2020-12-05T08:53:40.800Z">2020-12-05</time></p><p class="title"><a href="/2020/12/05/Blog-about-learning-95/">常用数组方法</a></p><p class="categories"><a href="/categories/learning/">learning</a> / <a href="/categories/learning/JavaScript/">JavaScript</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2020-12-05T08:53:39.467Z">2020-12-05</time></p><p class="title"><a href="/2020/12/05/Blog-about-learning-38/">别慌，不就是跨域么!</a></p><p class="categories"><a href="/categories/learning/">learning</a> / <a href="/categories/learning/Web/">Web</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2020-12-01T12:22:47.000Z">2020-12-01</time></p><p class="title"><a href="/2020/12/01/Blog-about-learning-159/">源码阅读</a></p></div></article></div></div></div></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/logo.svg" alt="Fallen-down" height="28"></a><p class="is-size-7"><span>&copy; 2020 Fallen-down</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" async></script><script>moment.locale("zh-CN");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "此网站使用Cookie来改善您的体验。",
+          dismiss: "知道了！",
+          allow: "允许使用Cookie",
+          deny: "拒绝",
+          link: "了解更多",
+          policy: "Cookie政策",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="想要查找什么..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"想要查找什么...","untitled":"(无标题)","posts":"文章","pages":"页面","categories":"分类","tags":"标签"});
+        });</script></body></html>
